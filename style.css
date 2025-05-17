@@ -1,12 +1,13 @@
 body {
   font-family: sans-serif;
   text-align: center;
-  background-color: #f9f9f9;
+  background-color: #f0f0f0;
 }
 
 .title {
   margin: 20px;
   font-size: 24px;
+  color: #333;
 }
 
 .ludo-board {
@@ -16,17 +17,17 @@ body {
   width: 450px;
   height: 450px;
   margin: auto;
-  border: 2px solid #333;
+  border: 2px solid #000;
 }
 
 .ludo-board div {
-  border: 1px solid #ccc;
+  border: 1px solid #ddd;
   background-color: white;
   position: relative;
 }
 
 /* RED Home: Top-left 6x6 */
-.ludo-board div:nth-child(n+1):nth-child(-n+6),
+.ludo-board div:nth-child(-n+6),
 .ludo-board div:nth-child(n+16):nth-child(-n+21),
 .ludo-board div:nth-child(n+31):nth-child(-n+36),
 .ludo-board div:nth-child(n+46):nth-child(-n+51),
@@ -65,25 +66,7 @@ body {
   background-color: #2196f3;
 }
 
-/* Center tile */
+/* Center */
 .ludo-board div:nth-child(113) {
-  background-color: #ddd;
-  background-image: radial-gradient(circle, #666 20%, transparent 21%);
-  background-size: cover;
+  background-color: #ccc;
 }
-
-/* Tokens */
-.token {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  border: 2px solid black;
-  position: absolute;
-  top: 5px;
-  left: 5px;
-}
-
-.token.red { background: red; }
-.token.green { background: green; }
-.token.yellow { background: gold; }
-.token.blue { background: blue; }
