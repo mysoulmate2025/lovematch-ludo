@@ -56,3 +56,16 @@ body {
 }
 
 /* Board layout generation (JS is ideal for automating, but for now use HTML manually or a generator) */
+.token {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin: 2px auto;
+  background-color: gray;
+  border: 2px solid black;
+}
+
+.token.red { background-color: red; }
+.token.green { background-color: green; }
+.token.blue { background-color: blue; }
+.token.yellow { background-color: gold; }
