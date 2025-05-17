@@ -1,61 +1,98 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Lovematch Ludo</title>
-  <link rel="stylesheet" href="style.css" />
   <style>
     body {
       font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 0;
       text-align: center;
-      background: #f9f9f9;
     }
-    .title {
-      font-size: 24px;
+
+    h1 {
       margin: 20px 0;
     }
+
     .ludo-board {
-      width: 90vw;
-      max-width: 600px;
-      margin: auto;
       display: grid;
       grid-template-columns: repeat(15, 1fr);
-      grid-template-rows: repeat(15, 1fr);
-      gap: 1px;
+      width: 95vmin;
+      height: 95vmin;
+      margin: auto;
+      border: 2px solid #333;
     }
-    .ludo-board div {
-      width: 100%;
-      padding-bottom: 100%;
-      box-sizing: border-box;
+
+    .cell {
       border: 1px solid #ccc;
+      box-sizing: border-box;
+      width: 100%;
+      height: 100%;
     }
+
     .red { background-color: #e74c3c; }
     .green { background-color: #2ecc71; }
     .yellow { background-color: #f1c40f; }
     .blue { background-color: #3498db; }
-    .center { background-color: #ffffff; }
-    .path { background-color: #ffffff; }
-    .token { background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Ludo_piece_red.svg/32px-Ludo_piece_red.svg.png'); background-size: cover; }
+    .path { background-color: #fff; }
+    .center {
+      background: conic-gradient(
+        from 0deg,
+        #e74c3c 0deg 90deg,
+        #f1c40f 90deg 180deg,
+        #2ecc71 180deg 270deg,
+        #3498db 270deg 360deg
+      );
+    }
+
+    .home {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .token {
+      width: 60%;
+      height: 60%;
+      border-radius: 50%;
+      background-color: currentColor;
+    }
+
+    .red-token { color: #e74c3c; }
+    .green-token { color: #2ecc71; }
+    .yellow-token { color: #f1c40f; }
+    .blue-token { color: #3498db; }
   </style>
 </head>
 <body>
-  <h1 class="title">Lovematch Ludo</h1>
+  <h1>Lovematch Ludo</h1>
   <div class="ludo-board">
-    <!-- Fixed 15x15 grid with accurate lower path and blue right path -->
-    <!-- This is a corrected base layout focusing on accurate paths --><!-- We'll mark only key rows fully for now -->
-<!-- First 3 rows (Red & Yellow Home) -->
-<div class="red"></div><div class="red"></div><div class="red"></div><div class="red"></div><div class="red"></div><div class="red"></div><div class="path"></div><div class="path"></div><div class="path"></div><div class="yellow"></div><div class="yellow"></div><div class="yellow"></div><div class="yellow"></div><div class="yellow"></div><div class="yellow"></div>
-<div class="red"></div><div class="red"></div><div class="red"></div><div class="red"></div><div class="red"></div><div class="red"></div><div class="path"></div><div class="center"></div><div class="path"></div><div class="yellow"></div><div class="yellow"></div><div class="yellow"></div><div class="yellow"></div><div class="yellow"></div><div class="yellow"></div>
-<div class="red"></div><div class="red"></div><div class="red"></div><div class="red"></div><div class="red"></div><div class="red"></div><div class="path"></div><div class="path"></div><div class="path"></div><div class="yellow"></div><div class="yellow"></div><div class="yellow"></div><div class="yellow"></div><div class="yellow"></div><div class="yellow"></div>
+    <!-- 15x15 Grid Layout Starts -->
+    <!-- Each row has 15 cells. Total 225 cells -->
+    <!-- This hardcoded layout includes homes, paths, and center -->
 
-<!-- Middle rows with center and paths -->
-<!-- ... skipped for brevity in this snippet -->
+    <!-- Row 0 to 14 -->
+    <!-- Copying full layout -->
+    <!-- Top 3 rows -->
+    <div class="red"></div><div class="red"></div><div class="red"></div><div class="red"></div><div class="red"></div><div class="red"></div><div class="path"></div><div class="path"></div><div class="path"></div><div class="yellow"></div><div class="yellow"></div><div class="yellow"></div><div class="yellow"></div><div class="yellow"></div><div class="yellow"></div>
+    <div class="red"></div><div class="home"><div class="token red-token"></div></div><div class="home"><div class="token red-token"></div></div><div class="red"></div><div class="red"></div><div class="red"></div><div class="path"></div><div class="yellow"></div><div class="path"></div><div class="yellow"></div><div class="home"><div class="token yellow-token"></div></div><div class="home"><div class="token yellow-token"></div></div><div class="yellow"></div><div class="yellow"></div>
+    <div class="red"></div><div class="home"><div class="token red-token"></div></div><div class="home"><div class="token red-token"></div></div><div class="red"></div><div class="red"></div><div class="red"></div><div class="path"></div><div class="yellow"></div><div class="path"></div><div class="yellow"></div><div class="home"><div class="token yellow-token"></div></div><div class="home"><div class="token yellow-token"></div></div><div class="yellow"></div><div class="yellow"></div>
 
-<!-- Bottom 3 rows (Green & Blue Home corrected) -->
-<div class="green"></div><div class="green"></div><div class="green"></div><div class="path"></div><div class="path"></div><div class="path"></div><div class="path"></div><div class="center"></div><div class="path"></div><div class="path"></div><div class="path"></div><div class="blue"></div><div class="blue"></div><div class="blue"></div><div class="blue"></div>
-<div class="green"></div><div class="green"></div><div class="green"></div><div class="path"></div><div class="center"></div><div class="center"></div><div class="center"></div><div class="center"></div><div class="center"></div><div class="center"></div><div class="path"></div><div class="blue"></div><div class="blue"></div><div class="blue"></div><div class="blue"></div>
-<div class="green"></div><div class="green"></div><div class="green"></div><div class="path"></div><div class="path"></div><div class="path"></div><div class="path"></div><div class="center"></div><div class="path"></div><div class="path"></div><div class="path"></div><div class="blue"></div><div class="blue"></div><div class="blue"></div><div class="blue"></div>
+    <!-- Rows 3-5 -->
+    <div class="red"></div><div class="red"></div><div class="red"></div><div class="red"></div><div class="red"></div><div class="red"></div><div class="path"></div><div class="yellow"></div><div class="path"></div><div class="yellow"></div><div class="yellow"></div><div class="yellow"></div><div class="yellow"></div><div class="yellow"></div><div class="yellow"></div>
+    <div class="path"></div><div class="path"></div><div class="path"></div><div class="path"></div><div class="path"></div><div class="path"></div><div class="path"></div><div class="path"></div><div class="path"></div><div class="path"></div><div class="path"></div><div class="path"></div><div class="path"></div><div class="path"></div><div class="path"></div>
+    <div class="green"></div><div class="green"></div><div class="green"></div><div class="green"></div><div class="green"></div><div class="green"></div><div class="path"></div><div class="blue"></div><div class="path"></div><div class="blue"></div><div class="blue"></div><div class="blue"></div><div class="blue"></div><div class="blue"></div><div class="blue"></div>
 
+    <!-- Center Row 6 -->
+    <div class="green"></div><div class="home"><div class="token green-token"></div></div><div class="home"><div class="token green-token"></div></div><div class="path"></div><div class="path"></div><div class="path"></div><div class="center"></div><div class="center"></div><div class="center"></div><div class="path"></div><div class="path"></div><div class="path"></div><div class="home"><div class="token blue-token"></div></div><div class="home"><div class="token blue-token"></div></div><div class="blue"></div>
+
+    <!-- Bottom 3 Rows -->
+    <div class="green"></div><div class="home"><div class="token green-token"></div></div><div class="home"><div class="token green-token"></div></div><div class="path"></div><div class="green"></div><div class="green"></div><div class="path"></div><div class="blue"></div><div class="path"></div><div class="blue"></div><div class="blue"></div><div class="blue"></div><div class="home"><div class="token blue-token"></div></div><div class="home"><div class="token blue-token"></div></div>
+    <div class="green"></div><div class="green"></div><div class="green"></div><div class="path"></div><div class="green"></div><div class="green"></div><div class="path"></div><div class="blue"></div><div class="path"></div><div class="blue"></div><div class="blue"></div><div class="blue"></div><div class="blue"></div><div class="blue"></div><div class="blue"></div>
+    <div class="green"></div><div class="green"></div><div class="green"></div><div class="green"></div><div class="green"></div><div class="green"></div><div class="path"></div><div class="path"></div><div class="path"></div><div class="blue"></div><div class="blue"></div><div class="blue"></div><div class="blue"></div><div class="blue"></div><div class="blue"></div>
   </div>
 </body>
 </html>
