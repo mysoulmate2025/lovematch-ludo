@@ -26,38 +26,32 @@ h1 {
   height: 100%;
 }
 
-/* Color Zones Using nth-child */
-
-/* Red Home */
+/* Home Zones */
 .cell:nth-child(-n+6),
 .cell:nth-child(16), .cell:nth-child(17), .cell:nth-child(18),
 .cell:nth-child(31), .cell:nth-child(32), .cell:nth-child(33) {
   background: #e74c3c;
 }
 
-/* Green Home */
 .cell:nth-child(181), .cell:nth-child(182), .cell:nth-child(183),
 .cell:nth-child(196), .cell:nth-child(197), .cell:nth-child(198),
 .cell:nth-child(211), .cell:nth-child(212), .cell:nth-child(213) {
   background: #2ecc71;
 }
 
-/* Yellow Home */
 .cell:nth-child(13), .cell:nth-child(14), .cell:nth-child(15),
 .cell:nth-child(28), .cell:nth-child(29), .cell:nth-child(30),
 .cell:nth-child(43), .cell:nth-child(44), .cell:nth-child(45) {
   background: #f1c40f;
 }
 
-/* Blue Home */
 .cell:nth-child(183), .cell:nth-child(184), .cell:nth-child(185),
 .cell:nth-child(198), .cell:nth-child(199), .cell:nth-child(200),
 .cell:nth-child(213), .cell:nth-child(214), .cell:nth-child(215) {
   background: #3498db;
 }
 
-/* Central Cross Path */
-/* Vertical middle column (8th column) */
+/* Central Path */
 .cell:nth-child(8),
 .cell:nth-child(23), .cell:nth-child(38), .cell:nth-child(53),
 .cell:nth-child(68), .cell:nth-child(83), .cell:nth-child(98),
@@ -67,12 +61,10 @@ h1 {
   background: #fff;
 }
 
-/* Horizontal middle row (8th row) */
 .cell:nth-child(n+106):nth-child(-n+120) {
   background: #fff;
 }
 
-/* Center Square (cross center) */
 .cell:nth-child(113) {
   background: conic-gradient(
     #e74c3c 0% 25%,
