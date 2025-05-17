@@ -1,56 +1,58 @@
 body {
   font-family: Arial, sans-serif;
-  background: #f4f4f4;
+  background-color: #f4f4f4;
   text-align: center;
   padding: 20px;
 }
 
 .title {
   margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
 }
 
-.board {
-  width: 300px;
-  height: 300px;
-  margin: 0 auto;
+.ludo-board {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  gap: 2px;
+  grid-template-columns: repeat(15, 20px);
+  grid-template-rows: repeat(15, 20px);
+  width: fit-content;
+  margin: auto;
+  border: 2px solid #000;
 }
 
-.home {
-  width: 100%;
-  height: 100%;
+/* Quadrants */
+.ludo-board div {
+  box-sizing: border-box;
+  border: 1px solid #ccc;
 }
 
-.red {
-  background: #e74c3c;
-  grid-column: 1;
-  grid-row: 1;
+.ludo-board div.red {
+  background-color: #e74c3c;
 }
 
-.green {
-  background: #2ecc71;
-  grid-column: 3;
-  grid-row: 1;
+.ludo-board div.green {
+  background-color: #2ecc71;
 }
 
-.yellow {
-  background: #f1c40f;
-  grid-column: 1;
-  grid-row: 3;
+.ludo-board div.yellow {
+  background-color: #f1c40f;
 }
 
-.blue {
-  background: #3498db;
-  grid-column: 3;
-  grid-row: 3;
+.ludo-board div.blue {
+  background-color: #3498db;
 }
 
-.center {
-  background: #fff;
-  grid-column: 2;
-  grid-row: 2;
-  border: 4px solid #333;
+/* Paths */
+.ludo-board div.path {
+  background-color: #ffffff;
+  border: 1px solid #888;
 }
+
+.ludo-board div.center {
+  background: radial-gradient(white, #ddd);
+  grid-column: 7 / span 3;
+  grid-row: 7 / span 3;
+  border: 2px solid #000;
+}
+
+/* Board layout generation (JS is ideal for automating, but for now use HTML manually or a generator) */
