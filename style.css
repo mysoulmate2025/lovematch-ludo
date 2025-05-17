@@ -1,5 +1,5 @@
 body {
-  font-family: sans-serif;
+  font-family: Arial, sans-serif;
   text-align: center;
   background-color: #f0f0f0;
 }
@@ -7,7 +7,7 @@ body {
 .title {
   margin: 20px;
   font-size: 24px;
-  color: #333;
+  color: #222;
 }
 
 .ludo-board {
@@ -16,14 +16,15 @@ body {
   grid-template-rows: repeat(15, 30px);
   width: 450px;
   height: 450px;
-  margin: auto;
+  margin: 0 auto;
   border: 2px solid #000;
 }
 
 .ludo-board div {
-  border: 1px solid #ddd;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #ccc;
   background-color: white;
-  position: relative;
 }
 
 /* RED Home: Top-left 6x6 */
@@ -33,40 +34,125 @@ body {
 .ludo-board div:nth-child(n+46):nth-child(-n+51),
 .ludo-board div:nth-child(n+61):nth-child(-n+66),
 .ludo-board div:nth-child(n+76):nth-child(-n+81) {
-  background-color: #f44336;
+  background-color: #e53935;
 }
 
 /* GREEN Home: Top-right 6x6 */
-.ludo-board div:nth-child(n+10):nth-child(-n+15),
-.ludo-board div:nth-child(n+25):nth-child(-n+30),
-.ludo-board div:nth-child(n+40):nth-child(-n+45),
-.ludo-board div:nth-child(n+55):nth-child(-n+60),
-.ludo-board div:nth-child(n+70):nth-child(-n+75),
-.ludo-board div:nth-child(n+85):nth-child(-n+90) {
-  background-color: #4caf50;
+.ludo-board div:nth-child(10),
+.ludo-board div:nth-child(11),
+.ludo-board div:nth-child(12),
+.ludo-board div:nth-child(13),
+.ludo-board div:nth-child(14),
+.ludo-board div:nth-child(15),
+.ludo-board div:nth-child(25),
+.ludo-board div:nth-child(26),
+.ludo-board div:nth-child(27),
+.ludo-board div:nth-child(28),
+.ludo-board div:nth-child(29),
+.ludo-board div:nth-child(30),
+.ludo-board div:nth-child(40),
+.ludo-board div:nth-child(41),
+.ludo-board div:nth-child(42),
+.ludo-board div:nth-child(43),
+.ludo-board div:nth-child(44),
+.ludo-board div:nth-child(45),
+.ludo-board div:nth-child(55),
+.ludo-board div:nth-child(56),
+.ludo-board div:nth-child(57),
+.ludo-board div:nth-child(58),
+.ludo-board div:nth-child(59),
+.ludo-board div:nth-child(60),
+.ludo-board div:nth-child(70),
+.ludo-board div:nth-child(71),
+.ludo-board div:nth-child(72),
+.ludo-board div:nth-child(73),
+.ludo-board div:nth-child(74),
+.ludo-board div:nth-child(75),
+.ludo-board div:nth-child(85),
+.ludo-board div:nth-child(86),
+.ludo-board div:nth-child(87),
+.ludo-board div:nth-child(88),
+.ludo-board div:nth-child(89),
+.ludo-board div:nth-child(90) {
+  background-color: #43a047;
 }
 
 /* YELLOW Home: Bottom-left 6x6 */
-.ludo-board div:nth-child(n+136):nth-child(-n+141),
-.ludo-board div:nth-child(n+151):nth-child(-n+156),
-.ludo-board div:nth-child(n+166):nth-child(-n+171),
-.ludo-board div:nth-child(n+181):nth-child(-n+186),
-.ludo-board div:nth-child(n+196):nth-child(-n+201),
-.ludo-board div:nth-child(n+211):nth-child(-n+216) {
-  background-color: #ffeb3b;
+.ludo-board div:nth-child(136),
+.ludo-board div:nth-child(137),
+.ludo-board div:nth-child(138),
+.ludo-board div:nth-child(139),
+.ludo-board div:nth-child(140),
+.ludo-board div:nth-child(141),
+.ludo-board div:nth-child(151),
+.ludo-board div:nth-child(152),
+.ludo-board div:nth-child(153),
+.ludo-board div:nth-child(154),
+.ludo-board div:nth-child(155),
+.ludo-board div:nth-child(156),
+.ludo-board div:nth-child(166),
+.ludo-board div:nth-child(167),
+.ludo-board div:nth-child(168),
+.ludo-board div:nth-child(169),
+.ludo-board div:nth-child(170),
+.ludo-board div:nth-child(171),
+.ludo-board div:nth-child(181),
+.ludo-board div:nth-child(182),
+.ludo-board div:nth-child(183),
+.ludo-board div:nth-child(184),
+.ludo-board div:nth-child(185),
+.ludo-board div:nth-child(186),
+.ludo-board div:nth-child(196),
+.ludo-board div:nth-child(197),
+.ludo-board div:nth-child(198),
+.ludo-board div:nth-child(199),
+.ludo-board div:nth-child(200),
+.ludo-board div:nth-child(201),
+.ludo-board div:nth-child(211),
+.ludo-board div:nth-child(212),
+.ludo-board div:nth-child(213),
+.ludo-board div:nth-child(214),
+.ludo-board div:nth-child(215),
+.ludo-board div:nth-child(216) {
+  background-color: #fdd835;
 }
 
 /* BLUE Home: Bottom-right 6x6 */
-.ludo-board div:nth-child(n+144):nth-child(-n+149),
-.ludo-board div:nth-child(n+159):nth-child(-n+164),
-.ludo-board div:nth-child(n+174):nth-child(-n+179),
-.ludo-board div:nth-child(n+189):nth-child(-n+194),
-.ludo-board div:nth-child(n+204):nth-child(-n+209),
-.ludo-board div:nth-child(n+219):nth-child(-n+224) {
-  background-color: #2196f3;
-}
-
-/* Center */
-.ludo-board div:nth-child(113) {
-  background-color: #ccc;
+.ludo-board div:nth-child(144),
+.ludo-board div:nth-child(145),
+.ludo-board div:nth-child(146),
+.ludo-board div:nth-child(147),
+.ludo-board div:nth-child(148),
+.ludo-board div:nth-child(149),
+.ludo-board div:nth-child(159),
+.ludo-board div:nth-child(160),
+.ludo-board div:nth-child(161),
+.ludo-board div:nth-child(162),
+.ludo-board div:nth-child(163),
+.ludo-board div:nth-child(164),
+.ludo-board div:nth-child(174),
+.ludo-board div:nth-child(175),
+.ludo-board div:nth-child(176),
+.ludo-board div:nth-child(177),
+.ludo-board div:nth-child(178),
+.ludo-board div:nth-child(179),
+.ludo-board div:nth-child(189),
+.ludo-board div:nth-child(190),
+.ludo-board div:nth-child(191),
+.ludo-board div:nth-child(192),
+.ludo-board div:nth-child(193),
+.ludo-board div:nth-child(194),
+.ludo-board div:nth-child(204),
+.ludo-board div:nth-child(205),
+.ludo-board div:nth-child(206),
+.ludo-board div:nth-child(207),
+.ludo-board div:nth-child(208),
+.ludo-board div:nth-child(209),
+.ludo-board div:nth-child(219),
+.ludo-board div:nth-child(220),
+.ludo-board div:nth-child(221),
+.ludo-board div:nth-child(222),
+.ludo-board div:nth-child(223),
+.ludo-board div:nth-child(224) {
+  background-color: #1e88e5;
 }
