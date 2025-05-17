@@ -1,71 +1,89 @@
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
+  font-family: sans-serif;
   text-align: center;
-  padding: 20px;
+  background-color: #f9f9f9;
 }
 
 .title {
-  margin-bottom: 20px;
+  margin: 20px;
   font-size: 24px;
-  color: #333;
 }
 
 .ludo-board {
   display: grid;
-  grid-template-columns: repeat(15, 20px);
-  grid-template-rows: repeat(15, 20px);
-  width: fit-content;
+  grid-template-columns: repeat(15, 30px);
+  grid-template-rows: repeat(15, 30px);
+  width: 450px;
+  height: 450px;
   margin: auto;
-  border: 2px solid #000;
+  border: 2px solid #333;
 }
 
-/* Quadrants */
 .ludo-board div {
-  box-sizing: border-box;
   border: 1px solid #ccc;
+  background-color: white;
+  position: relative;
 }
 
-.ludo-board div.red {
-  background-color: #e74c3c;
+/* Red Home Area: Top-left 6x6 */
+.ludo-board div:nth-child(-n+6),
+.ludo-board div:nth-child(n+16):nth-child(-n+21),
+.ludo-board div:nth-child(n+31):nth-child(-n+36),
+.ludo-board div:nth-child(n+46):nth-child(-n+51),
+.ludo-board div:nth-child(n+61):nth-child(-n+66),
+.ludo-board div:nth-child(n+76):nth-child(-n+81) {
+  background-color: #f44336;
 }
 
-.ludo-board div.green {
-  background-color: #2ecc71;
+/* Green Home Area: Top-right 6x6 */
+.ludo-board div:nth-child(n+10):nth-child(-n+15),
+.ludo-board div:nth-child(n+25):nth-child(-n+30),
+.ludo-board div:nth-child(n+40):nth-child(-n+45),
+.ludo-board div:nth-child(n+55):nth-child(-n+60),
+.ludo-board div:nth-child(n+70):nth-child(-n+75),
+.ludo-board div:nth-child(n+85):nth-child(-n+90) {
+  background-color: #4caf50;
 }
 
-.ludo-board div.yellow {
-  background-color: #f1c40f;
+/* Yellow Home Area: Bottom-left 6x6 */
+.ludo-board div:nth-child(n+136):nth-child(-n+141),
+.ludo-board div:nth-child(n+151):nth-child(-n+156),
+.ludo-board div:nth-child(n+166):nth-child(-n+171),
+.ludo-board div:nth-child(n+181):nth-child(-n+186),
+.ludo-board div:nth-child(n+196):nth-child(-n+201),
+.ludo-board div:nth-child(n+211):nth-child(-n+216) {
+  background-color: #ffeb3b;
 }
 
-.ludo-board div.blue {
-  background-color: #3498db;
+/* Blue Home Area: Bottom-right 6x6 */
+.ludo-board div:nth-child(n+144):nth-child(-n+149),
+.ludo-board div:nth-child(n+159):nth-child(-n+164),
+.ludo-board div:nth-child(n+174):nth-child(-n+179),
+.ludo-board div:nth-child(n+189):nth-child(-n+194),
+.ludo-board div:nth-child(n+204):nth-child(-n+209),
+.ludo-board div:nth-child(n+219):nth-child(-n+224) {
+  background-color: #2196f3;
 }
 
-/* Paths */
-.ludo-board div.path {
-  background-color: #ffffff;
-  border: 1px solid #888;
+/* Center Star Zone */
+.ludo-board div:nth-child(113) {
+  background-color: #ddd;
+  background-image: radial-gradient(circle, #666 20%, transparent 21%);
+  background-size: cover;
 }
 
-.ludo-board div.center {
-  background: radial-gradient(white, #ddd);
-  grid-column: 7 / span 3;
-  grid-row: 7 / span 3;
-  border: 2px solid #000;
-}
-
-/* Board layout generation (JS is ideal for automating, but for now use HTML manually or a generator) */
+/* Token styles */
 .token {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  margin: 2px auto;
-  background-color: gray;
   border: 2px solid black;
+  position: absolute;
+  top: 5px;
+  left: 5px;
 }
 
-.token.red { background-color: red; }
-.token.green { background-color: green; }
-.token.blue { background-color: blue; }
-.token.yellow { background-color: gold; }
+.token.red { background: red; }
+.token.green { background: green; }
+.token.yellow { background: gold; }
+.token.blue { background: blue; }
